@@ -10,25 +10,30 @@
         margin: 0;
         padding: 0;
       }
+
       .container {
         max-width: 720px;
         margin: 0 auto;
         padding: 40px 24px 80px;
       }
+
       h1 {
         color: #0a4a73;
         margin-bottom: 16px;
       }
+
       p {
         margin-bottom: 24px;
         color: #1f2a37;
         line-height: 1.6;
       }
+
       ul {
         list-style: none;
         padding: 0;
         margin: 0;
       }
+
       li {
         background: #fff;
         border-radius: 10px;
@@ -36,17 +41,37 @@
         margin-bottom: 16px;
         padding: 20px 24px;
       }
+
       a {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        gap: 16px;
         text-decoration: none;
         color: #0a7aca;
         font-weight: 600;
       }
+
       a span:last-child {
         font-size: 0.9rem;
         color: #4b5563;
+        text-align: right;
+      }
+
+      @media (max-width: 520px) {
+        .container {
+          padding: 28px 16px 56px;
+        }
+
+        a {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 8px;
+        }
+
+        a span:last-child {
+          text-align: left;
+        }
       }
     </style>
   </head>
@@ -57,17 +82,26 @@
         Desde esta página puedes acceder a los documentos públicos que se requieren para la publicación de la app en Google
         Play. Mantendremos estos enlaces actualizados para que revisores y usuarios puedan consultarlos fácilmente.
       </p>
+
       <ul>
         <li>
           <a href="./privacidad.html">
-            Política de Privacidad
+            <span>Política de Privacidad</span>
             <span>Última actualización: 7/11/2025</span>
           </a>
         </li>
+
         <li>
           <a href="./eliminar-cuenta.html">
-            Instrucciones para eliminar la cuenta
+            <span>Instrucciones para eliminar la cuenta</span>
             <span>Guía paso a paso</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="./contacto.html">
+            <span>Contacto de la entidad</span>
+            <span>Correo y teléfono oficial</span>
           </a>
         </li>
       </ul>
