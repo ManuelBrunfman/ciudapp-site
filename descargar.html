@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#07152c" />
+  <meta name="description" content="Descargá Ciudapp Gremial para iPhone y Android. Información gremial, beneficios, comunicados y alertas en un solo lugar." />
+  <title>Descargar Ciudapp Gremial</title>
+
+  <style>
+    :root {
+      --bg: #061326;
+      --bg-deep: #030a16;
+      --panel: rgba(9, 28, 55, 0.82);
+      --panel-strong: rgba(8, 24, 48, 0.96);
+      --line: rgba(115, 174, 255, 0.24);
+      --text: #f7f9ff;
+      --muted: #b8c6db;
+      --blue: #1677ff;
+      --blue-2: #41a0ff;
+      --green: #91cf2f;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+      --radius: 28px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { min-height: 100%; background: var(--bg-deep); }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background:
+        radial-gradient(circle at 73% 18%, rgba(22, 119, 255, 0.32), transparent 31%),
+        radial-gradient(circle at 14% 82%, rgba(34, 115, 255, 0.16), transparent 34%),
+        linear-gradient(145deg, #07172e 0%, #041024 52%, #020813 100%);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.17;
+      background-image:
+        linear-gradient(30deg, transparent 24%, rgba(71, 140, 255, .35) 25%, rgba(71, 140, 255, .35) 26%, transparent 27%, transparent 74%, rgba(71, 140, 255, .35) 75%, rgba(71, 140, 255, .35) 76%, transparent 77%),
+        linear-gradient(150deg, transparent 24%, rgba(71, 140, 255, .35) 25%, rgba(71, 140, 255, .35) 26%, transparent 27%, transparent 74%, rgba(71, 140, 255, .35) 75%, rgba(71, 140, 255, .35) 76%, transparent 77%);
+      background-size: 44px 76px;
+      mask-image: linear-gradient(to bottom, rgba(0,0,0,.8), transparent 72%);
+    }
+
+    .page {
+      position: relative;
+      z-index: 1;
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 26px 0 12px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none;
+      color: var(--text);
+    }
+
+    .brand-mark {
+      width: 52px;
+      height: 52px;
+      flex: 0 0 52px;
+      filter: drop-shadow(0 8px 18px rgba(18, 105, 255, .25));
+    }
+
+    .wordmark strong {
+      display: block;
+      font-size: 25px;
+      line-height: 1;
+      letter-spacing: -0.7px;
+    }
+
+    .wordmark span {
+      display: block;
+      margin-top: 5px;
+      color: var(--blue-2);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: 2.2px;
+    }
+
+    .top-pill {
+      border: 1px solid rgba(122, 178, 255, .24);
+      background: rgba(6, 22, 44, .58);
+      backdrop-filter: blur(10px);
+      border-radius: 999px;
+      padding: 9px 14px;
+      color: #c9d7eb;
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    main {
+      flex: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, .75fr);
+      align-items: center;
+      gap: 70px;
+      padding: 42px 0 54px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      border: 1px solid rgba(70, 146, 255, .32);
+      background: rgba(15, 62, 125, .24);
+      border-radius: 999px;
+      padding: 8px 12px;
+      color: #cfe2ff;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 1.35px;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 16px rgba(145, 207, 47, .8);
+    }
+
+    h1 {
+      max-width: 760px;
+      margin: 24px 0 20px;
+      font-size: clamp(48px, 6vw, 86px);
+      line-height: .95;
+      letter-spacing: -4px;
+    }
+
+    .gradient-word {
+      display: block;
+      color: transparent;
+      background: linear-gradient(90deg, #ffffff 0%, #a9d5ff 38%, #2b87ff 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .tagline {
+      margin: 0 0 17px;
+      color: #ffffff;
+      font-size: clamp(22px, 2vw, 30px);
+      font-weight: 760;
+      letter-spacing: -0.6px;
+    }
+
+    .lead {
+      max-width: 670px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(17px, 1.6vw, 20px);
+      line-height: 1.62;
+    }
+
+    .feature-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 28px 0 30px;
+    }
+
+    .feature {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 9px 12px;
+      border-radius: 13px;
+      border: 1px solid rgba(255,255,255,.1);
+      background: rgba(255,255,255,.045);
+      color: #dce7f8;
+      font-size: 14px;
+      font-weight: 650;
+    }
+
+    .feature i {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--blue-2);
+      box-shadow: 0 0 12px rgba(65,160,255,.65);
+    }
+
+    .feature:nth-child(2) i { background: var(--green); box-shadow: 0 0 12px rgba(145,207,47,.55); }
+
+    .download-card {
+      max-width: 680px;
+      border: 1px solid rgba(120, 177, 255, .25);
+      border-radius: 24px;
+      background: linear-gradient(155deg, rgba(12, 37, 73, .88), rgba(6, 20, 40, .9));
+      box-shadow: 0 20px 52px rgba(0,0,0,.24), inset 0 1px 0 rgba(255,255,255,.04);
+      padding: 22px;
+      backdrop-filter: blur(16px);
+    }
+
+    .download-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      margin-bottom: 16px;
+    }
+
+    .download-head strong {
+      display: block;
+      font-size: 19px;
+      letter-spacing: -0.25px;
+    }
+
+    .download-head span {
+      display: block;
+      margin-top: 4px;
+      color: #93a8c4;
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    #platform-status {
+      flex: 0 0 auto;
+      border-radius: 999px;
+      background: rgba(39, 125, 255, .13);
+      border: 1px solid rgba(67, 146, 255, .2);
+      color: #a7ccff;
+      padding: 7px 10px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .45px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .store-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .store-btn {
+      position: relative;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      padding: 13px 15px;
+      border-radius: 17px;
+      border: 1px solid rgba(255,255,255,.13);
+      background: rgba(255,255,255,.055);
+      color: white;
+      text-decoration: none;
+      transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .store-btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.08);
+      border-color: rgba(118,177,255,.44);
+    }
+
+    .store-btn:focus-visible {
+      outline: 3px solid rgba(68, 155, 255, .45);
+      outline-offset: 3px;
+    }
+
+    .store-btn.recommended {
+      border-color: rgba(69, 151, 255, .75);
+      background: linear-gradient(135deg, rgba(22,119,255,.26), rgba(22,119,255,.09));
+      box-shadow: 0 0 0 1px rgba(37,128,255,.08), 0 13px 30px rgba(10, 80, 190, .2);
+    }
+
+    .store-btn.recommended::after {
+      content: "RECOMENDADO";
+      position: absolute;
+      top: -9px;
+      right: 12px;
+      padding: 4px 7px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: white;
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: .7px;
+    }
+
+    .store-icon {
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
+      background: rgba(255,255,255,.09);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .store-copy small {
+      display: block;
+      color: #9fb1c9;
+      font-size: 10px;
+      font-weight: 650;
+      letter-spacing: .35px;
+      text-transform: uppercase;
+    }
+
+    .store-copy b {
+      display: block;
+      margin-top: 3px;
+      color: #fff;
+      font-size: 15px;
+      letter-spacing: -0.2px;
+    }
+
+    .microcopy {
+      margin: 14px 2px 0;
+      color: #7890af;
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    .visual {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: 610px;
+    }
+
+    .halo {
+      position: absolute;
+      width: 470px;
+      height: 470px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(26,119,255,.28) 0%, rgba(26,119,255,.06) 48%, transparent 70%);
+      filter: blur(2px);
+    }
+
+    .phone {
+      position: relative;
+      width: 305px;
+      height: 610px;
+      border-radius: 49px;
+      padding: 11px;
+      transform: rotate(4.3deg);
+      background: linear-gradient(155deg, #172238, #02050b 50%, #1d2b44);
+      box-shadow: 0 35px 80px rgba(0,0,0,.56), 0 0 0 1px rgba(255,255,255,.16), inset 0 0 0 2px rgba(255,255,255,.06);
+    }
+
+    .screen {
+      height: 100%;
+      overflow: hidden;
+      border-radius: 39px;
+      background:
+        radial-gradient(circle at 80% 12%, rgba(19,117,255,.27), transparent 28%),
+        linear-gradient(180deg, #081934, #061127 80%);
+      border: 1px solid rgba(255,255,255,.08);
+    }
+
+    .notch {
+      position: absolute;
+      z-index: 4;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 104px;
+      height: 25px;
+      border-radius: 18px;
+      background: #03060a;
+    }
+
+    .app-head {
+      padding: 57px 22px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .app-wordmark strong {
+      display: block;
+      font-size: 20px;
+      letter-spacing: -.6px;
+    }
+
+    .app-wordmark span {
+      display: block;
+      margin-top: 2px;
+      color: #2f8cff;
+      font-size: 10px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+    }
+
+    .bell {
+      width: 35px;
+      height: 35px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,.07);
+      color: white;
+    }
+
+    .app-content { padding: 0 17px 20px; }
+
+    .hero-tile {
+      min-height: 115px;
+      border-radius: 17px;
+      padding: 18px;
+      background: linear-gradient(135deg, #166cdf 0%, #0b3f84 100%);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.17);
+    }
+
+    .hero-tile small {
+      color: #cfe4ff;
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .hero-tile h3 {
+      margin: 7px 0 0;
+      font-size: 20px;
+      line-height: 1.12;
+      letter-spacing: -.5px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px;
+      margin-top: 10px;
+    }
+
+    .mini-card {
+      min-height: 93px;
+      border-radius: 15px;
+      padding: 13px;
+      border: 1px solid rgba(255,255,255,.07);
+      background: rgba(255,255,255,.055);
+    }
+
+    .mini-card .dot {
+      width: 26px;
+      height: 26px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 10px;
+      background: rgba(34,128,255,.16);
+      color: #55a5ff;
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .mini-card.green .dot {
+      background: rgba(145,207,47,.13);
+      color: #a8e747;
+    }
+
+    .mini-card b {
+      display: block;
+      font-size: 11px;
+      line-height: 1.3;
+    }
+
+    .news-card {
+      margin-top: 10px;
+      min-height: 108px;
+      border-radius: 15px;
+      padding: 14px;
+      border: 1px solid rgba(255,255,255,.07);
+      background: rgba(255,255,255,.045);
+    }
+
+    .news-label {
+      display: inline-block;
+      padding: 4px 7px;
+      border-radius: 7px;
+      background: rgba(26,119,255,.2);
+      color: #7ab6ff;
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: .6px;
+    }
+
+    .news-lines { margin-top: 12px; }
+    .news-lines span {
+      display: block;
+      height: 7px;
+      margin-bottom: 7px;
+      border-radius: 999px;
+      background: rgba(218,232,255,.16);
+    }
+    .news-lines span:nth-child(2) { width: 83%; }
+    .news-lines span:nth-child(3) { width: 58%; }
+
+    .bottom-nav {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      border-radius: 18px;
+      background: rgba(3,14,30,.84);
+      border: 1px solid rgba(255,255,255,.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav-item {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #607797;
+    }
+
+    .nav-item.active {
+      width: 25px;
+      border-radius: 999px;
+      background: var(--blue);
+      box-shadow: 0 0 15px rgba(22,119,255,.8);
+    }
+
+    .floating-chip {
+      position: absolute;
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      padding: 10px 13px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.14);
+      background: rgba(6,22,45,.84);
+      color: #e8f1ff;
+      font-size: 12px;
+      font-weight: 750;
+      backdrop-filter: blur(13px);
+      box-shadow: 0 14px 30px rgba(0,0,0,.25);
+    }
+
+    .floating-chip::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 12px rgba(145,207,47,.65);
+    }
+
+    .chip-one { top: 115px; right: 3px; }
+    .chip-two { bottom: 115px; left: -8px; }
+    .chip-two::before { background: var(--blue-2); box-shadow: 0 0 12px rgba(65,160,255,.65); }
+
+    footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 19px 0 26px;
+      border-top: 1px solid rgba(255,255,255,.07);
+      color: #748aa8;
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-links a {
+      color: #8fa5c1;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover { color: white; }
+
+    @media (max-width: 960px) {
+      main {
+        grid-template-columns: 1fr;
+        gap: 28px;
+        padding-top: 42px;
+      }
+
+      .copy { text-align: center; }
+      .lead, .download-card { margin-left: auto; margin-right: auto; }
+      .feature-row { justify-content: center; }
+      .visual { min-height: 530px; }
+      .phone { width: 270px; height: 540px; }
+      .chip-one { right: calc(50% - 210px); }
+      .chip-two { left: calc(50% - 205px); }
+    }
+
+    @media (max-width: 640px) {
+      .page { width: min(100% - 28px, 1180px); }
+      .topbar { padding-top: 18px; }
+      .top-pill { display: none; }
+      .brand-mark { width: 46px; height: 46px; flex-basis: 46px; }
+      .wordmark strong { font-size: 22px; }
+      main { padding: 34px 0 44px; }
+      h1 { margin-top: 20px; font-size: clamp(49px, 15vw, 70px); letter-spacing: -3.2px; }
+      .lead { font-size: 17px; }
+      .download-card { padding: 17px; border-radius: 21px; }
+      .download-head { display: block; }
+      #platform-status { display: inline-block; margin-top: 10px; }
+      .store-grid { grid-template-columns: 1fr; }
+      .store-btn { min-height: 70px; }
+      .visual { min-height: 500px; transform: scale(.9); margin: -18px 0; }
+      footer { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 430px) {
+      .eyebrow { font-size: 10px; letter-spacing: 1.05px; }
+      h1 { font-size: 50px; }
+      .tagline { font-size: 21px; }
+      .feature-row { margin-top: 22px; }
+      .feature { font-size: 12px; }
+      .visual { min-height: 455px; transform: scale(.82); margin: -43px 0; }
+      .phone { transform: rotate(3deg); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header class="topbar">
+      <a class="brand" href="./descargar.html" aria-label="Ciudapp Gremial">
+        <svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true">
+          <defs>
+            <linearGradient id="b" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#3d9cff"/><stop offset="1" stop-color="#0f54dc"/></linearGradient>
+            <linearGradient id="g" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#a6df44"/><stop offset="1" stop-color="#4fa82a"/></linearGradient>
+          </defs>
+          <circle cx="32" cy="10" r="8" fill="url(#b)" stroke="#eaf4ff" stroke-width="1.5"/>
+          <circle cx="51" cy="21" r="8" fill="url(#g)" stroke="#eaf4ff" stroke-width="1.5"/>
+          <circle cx="51" cy="43" r="8" fill="url(#b)" stroke="#eaf4ff" stroke-width="1.5"/>
+          <circle cx="32" cy="54" r="8" fill="url(#g)" stroke="#eaf4ff" stroke-width="1.5"/>
+          <circle cx="13" cy="43" r="8" fill="url(#b)" stroke="#eaf4ff" stroke-width="1.5"/>
+          <circle cx="13" cy="21" r="8" fill="url(#g)" stroke="#eaf4ff" stroke-width="1.5"/>
+          <path d="M24 15 20 18M44 18l-4-3M48 30v4M40 49l4-3M24 49l-4-3M16 30v4" stroke="#dbeaff" stroke-width="3" stroke-linecap="round" opacity=".9"/>
+        </svg>
+        <div class="wordmark">
+          <strong>Ciudapp</strong>
+          <span>GREMIAL</span>
+        </div>
+      </a>
+      <div class="top-pill">La app de La Gremial</div>
+    </header>
+
+    <main>
+      <section class="copy">
+        <div class="eyebrow">Disponible para iPhone y Android</div>
+        <h1>Tu Gremial,<span class="gradient-word">siempre con vos.</span></h1>
+        <p class="tagline">Toda la información gremial en una sola app.</p>
+        <p class="lead">Comunicados, noticias, beneficios, alertas y canales de contacto para las trabajadoras y los trabajadores del Banco Ciudad.</p>
+
+        <div class="feature-row" aria-label="Funciones principales">
+          <span class="feature"><i></i>Noticias y comunicados</span>
+          <span class="feature"><i></i>Beneficios</span>
+          <span class="feature"><i></i>Alertas</span>
+          <span class="feature"><i></i>Contacto</span>
+        </div>
+
+        <div class="download-card">
+          <div class="download-head">
+            <div>
+              <strong>Descargá Ciudapp Gremial</strong>
+              <span id="download-copy">Elegí la tienda correspondiente a tu dispositivo.</span>
+            </div>
+            <span id="platform-status">iOS + Android</span>
+          </div>
+
+          <div class="store-grid">
+            <a id="app-store" class="store-btn" href="https://apps.apple.com/ar/app/ciudapp-gremial/id6802139762" aria-label="Descargar Ciudapp Gremial en App Store">
+              <span class="store-icon" aria-hidden="true">
+                <svg width="24" height="28" viewBox="0 0 24 28" fill="none">
+                  <path d="M17.2 14.8c0-3.4 2.8-5 2.9-5.1-1.6-2.3-4-2.6-4.9-2.6-2.1-.2-4 1.2-5 1.2-1 0-2.6-1.2-4.3-1.2-2.2 0-4.2 1.3-5.3 3.2-2.3 3.9-.6 9.6 1.6 12.8 1.1 1.5 2.3 3.2 4 3.1 1.6-.1 2.2-1 4.1-1 1.9 0 2.5 1 4.2 1 1.7 0 2.8-1.5 3.8-3.1 1.2-1.8 1.7-3.5 1.8-3.6-.1 0-2.9-1.1-2.9-4.7Z" fill="white"/>
+                  <path d="M13.8 4.9c.9-1.1 1.5-2.6 1.3-4.1-1.3.1-2.8.9-3.7 2-.8 1-1.5 2.5-1.3 3.9 1.4.1 2.8-.7 3.7-1.8Z" fill="white"/>
+                </svg>
+              </span>
+              <span class="store-copy">
+                <small>Descargar en</small>
+                <b>App Store</b>
+              </span>
+            </a>
+
+            <a id="play-store" class="store-btn" href="https://play.google.com/store/apps/details?id=com.bancaria.ciudad" aria-label="Descargar Ciudapp Gremial en Google Play">
+              <span class="store-icon" aria-hidden="true">
+                <svg width="27" height="27" viewBox="0 0 28 28" fill="none">
+                  <path d="M4.2 3.3 17 14 4.2 24.7c-.5-.5-.8-1.2-.8-2V5.3c0-.8.3-1.5.8-2Z" fill="#5EC9F2"/>
+                  <path d="m17 14 3.8-3.2 4.5 2.6c1 .6 1 1.7 0 2.2l-4.5 2.6L17 14Z" fill="#F7D34A"/>
+                  <path d="m4.2 3.3 15.3 8.6-2.5 2.1L4.2 3.3Z" fill="#63D27C"/>
+                  <path d="m4.2 24.7 15.3-8.6-2.5-2.1L4.2 24.7Z" fill="#F46A68"/>
+                </svg>
+              </span>
+              <span class="store-copy">
+                <small>Disponible en</small>
+                <b>Google Play</b>
+              </span>
+            </a>
+          </div>
+
+          <p class="microcopy">Si la detección de dispositivo no coincide, podés elegir cualquiera de las dos tiendas manualmente.</p>
+        </div>
+      </section>
+
+      <section class="visual" aria-hidden="true">
+        <div class="halo"></div>
+        <div class="floating-chip chip-one">Beneficios y descuentos</div>
+        <div class="floating-chip chip-two">Alertas al instante</div>
+
+        <div class="phone">
+          <div class="notch"></div>
+          <div class="screen">
+            <div class="app-head">
+              <div class="app-wordmark">
+                <strong>Ciudapp</strong>
+                <span>GREMIAL</span>
+              </div>
+              <div class="bell">●</div>
+            </div>
+
+            <div class="app-content">
+              <div class="hero-tile">
+                <small>Tu Gremial</small>
+                <h3>Información clara,<br>siempre cerca.</h3>
+              </div>
+
+              <div class="mini-grid">
+                <div class="mini-card">
+                  <div class="dot">N</div>
+                  <b>Noticias y<br>comunicados</b>
+                </div>
+                <div class="mini-card green">
+                  <div class="dot">%</div>
+                  <b>Beneficios y<br>descuentos</b>
+                </div>
+              </div>
+
+              <div class="news-card">
+                <span class="news-label">NOVEDADES</span>
+                <div class="news-lines">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bottom-nav">
+              <span class="nav-item active"></span>
+              <span class="nav-item"></span>
+              <span class="nav-item"></span>
+              <span class="nav-item"></span>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>© 2026 La Gremial Banco Ciudad · Ciudapp Gremial</span>
+      <nav class="footer-links" aria-label="Enlaces legales">
+        <a href="./privacidad.html">Privacidad</a>
+        <a href="./eliminar-cuenta.html">Eliminar cuenta</a>
+        <a href="./contacto.html">Contacto</a>
+      </nav>
+    </footer>
+  </div>
+
+  <script>
+    (() => {
+      const ua = navigator.userAgent || "";
+      const platform = navigator.platform || "";
+      const isIOS = /iPad|iPhone|iPod/i.test(ua) || (platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      const isAndroid = /Android/i.test(ua);
+
+      const appStore = document.getElementById("app-store");
+      const playStore = document.getElementById("play-store");
+      const status = document.getElementById("platform-status");
+      const copy = document.getElementById("download-copy");
+
+      if (isIOS) {
+        appStore.classList.add("recommended");
+        status.textContent = "Dispositivo Apple";
+        copy.textContent = "Detectamos un iPhone o iPad. App Store es la opción recomendada.";
+      } else if (isAndroid) {
+        playStore.classList.add("recommended");
+        status.textContent = "Android";
+        copy.textContent = "Detectamos un dispositivo Android. Google Play es la opción recomendada.";
+      } else {
+        status.textContent = "iOS + Android";
+        copy.textContent = "Elegí la tienda correspondiente a tu dispositivo.";
+      }
+    })();
+  </script>
+</body>
+</html>
