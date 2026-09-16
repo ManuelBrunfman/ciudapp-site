@@ -7,70 +7,72 @@
 <meta name="description" content="Descargá Ciudapp Gremial para iPhone y Android.">
 <title>Ciudapp Gremial</title>
 <style>
-:root{--bg:#071426;--panel:#0a1e3a;--line:rgba(120,178,255,.18);--text:#f7f9ff;--muted:#b6c7dd;--blue:#1696e8;--blue2:#45a1ff;--green:#1aa772;--shadow:0 24px 70px rgba(0,0,0,.36)}
-*{box-sizing:border-box}html{background:#030915}body{margin:0;min-height:100vh;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);background:radial-gradient(circle at 82% 12%,rgba(22,150,232,.18),transparent 22%),linear-gradient(155deg,#08172d 0%,#061224 48%,#02070f 100%)}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.07;background-image:linear-gradient(30deg,transparent 24%,rgba(80,146,255,.8) 25%,rgba(80,146,255,.8) 26%,transparent 27%,transparent 74%,rgba(80,146,255,.8) 75%,rgba(80,146,255,.8) 76%,transparent 77%),linear-gradient(150deg,transparent 24%,rgba(80,146,255,.8) 25%,rgba(80,146,255,.8) 26%,transparent 27%,transparent 74%,rgba(80,146,255,.8) 75%,rgba(80,146,255,.8) 76%,transparent 77%);background-size:42px 74px}
-.page{width:min(1160px,calc(100% - 24px));margin:0 auto;padding:16px 0 26px;position:relative;z-index:1}.top{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-bottom:14px}.brand{display:flex;align-items:center;gap:12px}.brand img{width:46px;height:46px;object-fit:contain}.brand strong{display:block;font-size:1.55rem;line-height:.95;letter-spacing:-.03em}.brand span{display:block;margin-top:4px;color:var(--blue2);font-size:.8rem;font-weight:800;letter-spacing:.1em}.pill{padding:9px 13px;border:1px solid var(--line);border-radius:999px;background:rgba(8,28,54,.55);color:#d7e5fa;font-size:.8rem;font-weight:700}
-.hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.72fr);gap:30px;align-items:center;padding:26px;border:1px solid var(--line);border-radius:30px;background:linear-gradient(160deg,rgba(10,31,60,.9),rgba(4,17,36,.95));box-shadow:var(--shadow);overflow:hidden}.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:7px 11px;border-radius:999px;border:1px solid rgba(86,157,255,.25);background:rgba(15,57,111,.24);color:#d9e8ff;font-size:.72rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 14px rgba(26,167,114,.7)}h1{margin:18px 0 12px;font-size:clamp(2.6rem,5.8vw,5rem);line-height:.94;letter-spacing:-.05em}h1 span{display:block;color:#2f8fff}.lead{margin:0 0 18px;max-width:620px;color:var(--muted);font-size:clamp(.98rem,1.45vw,1.12rem);line-height:1.58}.lead strong{color:#fff}
-.download{padding:17px;border:1px solid rgba(115,177,255,.18);border-radius:22px;background:linear-gradient(155deg,rgba(12,37,73,.9),rgba(6,20,40,.94));box-shadow:0 16px 38px rgba(0,0,0,.2)}.download h2{margin:0 0 4px;font-size:1.08rem}.download p{margin:0 0 13px;color:#97aac6;font-size:.88rem;line-height:1.45}.stores{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.store{display:flex;align-items:center;gap:11px;min-height:70px;padding:12px 14px;border-radius:16px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#fff;text-decoration:none;transition:.18s ease}.store:hover{transform:translateY(-2px);background:rgba(255,255,255,.075);border-color:rgba(118,177,255,.42)}.storeIcon{width:38px;height:38px;display:grid;place-items:center;border-radius:11px;background:rgba(255,255,255,.08);font-size:21px}.store small{display:block;color:#9fb1c9;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase}.store b{display:block;margin-top:3px;font-size:.98rem}.features{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}.feature{padding:7px 10px;border:1px solid rgba(255,255,255,.08);border-radius:999px;background:rgba(255,255,255,.04);color:#dce7f7;font-size:.78rem;font-weight:650}.links{display:flex;flex-wrap:wrap;gap:9px 14px;margin-top:14px;color:#8fa2bc;font-size:.84rem}.links a{color:#dbe8fa;text-decoration:none}
-.visual{display:grid;place-items:center}.phone{width:min(100%,300px);padding:9px;border-radius:40px;background:linear-gradient(160deg,#1c2433,#060a11 55%,#2a3649);box-shadow:0 24px 55px rgba(0,0,0,.42);transform:rotate(-3deg)}.phone img{display:block;width:100%;height:auto;border-radius:33px;background:#0c1523}
-footer{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding:15px 8px 0;color:#7d91ab;font-size:.76rem}footer a{color:#b9cae0;text-decoration:none}
-@media(max-width:900px){.hero{grid-template-columns:1fr}.visual{order:2;margin-top:2px}.copy{order:1}.phone{width:min(70vw,250px)}}
-@media(max-width:620px){.page{width:min(100% - 14px,1160px);padding:8px 0 18px}.top{margin-bottom:8px}.pill{display:none}.brand img{width:40px;height:40px}.brand strong{font-size:1.38rem}.brand span{font-size:.72rem}.hero{padding:16px;border-radius:22px;gap:16px}.eyebrow{font-size:.64rem}h1{margin:13px 0 9px;font-size:clamp(2.35rem,13vw,3.75rem)}.lead{margin-bottom:13px;font-size:.93rem;line-height:1.5}.download{padding:14px;border-radius:18px}.download h2{font-size:1rem}.download p{font-size:.8rem;margin-bottom:11px}.stores{grid-template-columns:1fr 1fr;gap:8px}.store{min-height:62px;padding:10px}.storeIcon{width:34px;height:34px;font-size:19px}.store small{font-size:.54rem}.store b{font-size:.9rem}.features{margin-top:11px}.feature{font-size:.7rem}.links{margin-top:11px;font-size:.78rem}.phone{width:min(62vw,220px);margin-top:2px}footer{padding-top:10px;font-size:.7rem}}
-@media(max-width:390px){.stores{grid-template-columns:1fr}.phone{width:min(68vw,210px)}}
+:root{--bg:#061326;--text:#f7f9ff;--muted:#b9c8dc;--line:rgba(126,183,255,.18);--blue:#258cff;--green:#87cf35;--panel:rgba(7,24,48,.72);--shadow:0 24px 70px rgba(0,0,0,.34)}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#020711}
+body{min-height:100svh;font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:var(--text);overflow:hidden;background:radial-gradient(circle at 84% 18%,rgba(25,122,255,.23),transparent 28%),radial-gradient(circle at 18% 84%,rgba(19,99,220,.12),transparent 32%),linear-gradient(150deg,#09192f 0%,#051126 53%,#020711 100%)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.06;background-image:linear-gradient(30deg,transparent 24%,rgba(76,143,255,.8) 25%,rgba(76,143,255,.8) 26%,transparent 27%,transparent 74%,rgba(76,143,255,.8) 75%,rgba(76,143,255,.8) 76%,transparent 77%),linear-gradient(150deg,transparent 24%,rgba(76,143,255,.8) 25%,rgba(76,143,255,.8) 26%,transparent 27%,transparent 74%,rgba(76,143,255,.8) 75%,rgba(76,143,255,.8) 76%,transparent 77%);background-size:44px 76px}
+.page{position:relative;isolation:isolate;width:min(1280px,100%);height:100svh;min-height:620px;margin:0 auto;overflow:hidden}
+.screen-art{position:absolute;z-index:0;right:-1%;top:50%;height:108%;width:auto;transform:translateY(-50%);opacity:.86;filter:saturate(.95) contrast(1.02) drop-shadow(-20px 18px 42px rgba(0,0,0,.34));-webkit-mask-image:linear-gradient(to left,#000 0%,#000 58%,rgba(0,0,0,.72) 72%,transparent 100%);mask-image:linear-gradient(to left,#000 0%,#000 58%,rgba(0,0,0,.72) 72%,transparent 100%)}
+.page:after{content:"";position:absolute;z-index:1;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(3,10,22,.99) 0%,rgba(5,17,37,.96) 38%,rgba(5,17,37,.67) 57%,rgba(5,17,37,.10) 78%,rgba(5,17,37,.03) 100%)}
+.content{position:relative;z-index:2;width:min(58%,720px);height:100%;padding:clamp(26px,4.4vh,52px) clamp(28px,4vw,58px) clamp(22px,3.4vh,40px);display:flex;flex-direction:column;justify-content:center}
+.brand{position:absolute;top:clamp(22px,3.2vh,38px);left:clamp(28px,4vw,58px);display:flex;align-items:center;gap:13px}
+.brand img{width:50px;height:50px;object-fit:contain;filter:drop-shadow(0 10px 22px rgba(0,0,0,.24))}
+.brand strong{display:block;font-size:1.65rem;line-height:.95;letter-spacing:-.04em}.brand span{display:block;margin-top:4px;color:#50a8ff;font-size:.82rem;font-weight:850;letter-spacing:.11em}
+.copy{margin-top:4vh;max-width:650px}.eyebrow{display:inline-flex;align-items:center;gap:9px;padding:8px 12px;border:1px solid rgba(96,160,255,.25);border-radius:999px;background:rgba(13,52,102,.20);color:#d8e8ff;font-size:.72rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase}.eyebrow:before{content:"";width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 15px rgba(135,207,53,.68)}
+h1{margin:18px 0 14px;font-size:clamp(3.1rem,5.7vw,5.5rem);line-height:.91;letter-spacing:-.055em}h1 span{display:block;color:#338fff;text-shadow:0 0 28px rgba(51,143,255,.17)}
+.lead{max-width:590px;margin:0;color:var(--muted);font-size:clamp(1rem,1.35vw,1.16rem);line-height:1.58}.lead strong{color:#fff}
+.functions{display:flex;flex-wrap:wrap;gap:8px 13px;margin:17px 0 19px;color:#dce7f6;font-size:.82rem;font-weight:700}.functions span{display:inline-flex;align-items:center;gap:7px}.functions span:before{content:"";width:6px;height:6px;border-radius:50%;background:#4a9cff}.functions span:nth-child(2):before{background:var(--green)}
+.stores{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px;max-width:560px}
+.store{display:flex;align-items:center;gap:12px;min-height:72px;padding:12px 15px;border:1px solid rgba(255,255,255,.13);border-radius:17px;background:linear-gradient(155deg,rgba(14,43,82,.76),rgba(7,24,48,.80));color:#fff;text-decoration:none;box-shadow:0 14px 30px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.035);transition:.18s ease}.store:hover{transform:translateY(-2px);border-color:rgba(119,179,255,.42);background:linear-gradient(155deg,rgba(18,52,98,.84),rgba(8,28,55,.88))}.storeIcon{width:40px;height:40px;flex:0 0 40px;display:grid;place-items:center;border-radius:12px;background:rgba(255,255,255,.075);font-size:22px}.store small{display:block;color:#9eb1c9;font-size:.6rem;font-weight:750;letter-spacing:.07em;text-transform:uppercase}.store b{display:block;margin-top:3px;font-size:1rem;letter-spacing:-.01em}
+.links{position:absolute;left:clamp(28px,4vw,58px);bottom:clamp(22px,3.4vh,40px);display:flex;flex-wrap:wrap;gap:8px 17px;align-items:center;color:#7f93ad;font-size:.79rem}.links a{color:#c5d5e9;text-decoration:none}.links a:hover{color:#fff}.links .sep{opacity:.42}
+.availability{position:absolute;z-index:2;right:clamp(18px,2.6vw,36px);top:clamp(20px,3vh,34px);padding:9px 13px;border:1px solid rgba(255,255,255,.11);border-radius:999px;background:rgba(3,12,25,.45);backdrop-filter:blur(8px);color:#dbe8f8;font-size:.74rem;font-weight:750}
+@media(max-width:980px){.content{width:66%;padding-left:26px;padding-right:18px}.brand{left:26px}.links{left:26px}.screen-art{right:-13%;height:103%}.page:after{background:linear-gradient(90deg,rgba(3,10,22,.99) 0%,rgba(5,17,37,.96) 44%,rgba(5,17,37,.72) 65%,rgba(5,17,37,.18) 86%,rgba(5,17,37,.05) 100%)}.availability{display:none}}
+@media(max-width:720px){body{overflow:auto}.page{height:100svh;min-height:690px}.screen-art{right:-28%;top:53%;height:96%;opacity:.48;-webkit-mask-image:linear-gradient(to left,#000 0%,rgba(0,0,0,.85) 50%,transparent 100%);mask-image:linear-gradient(to left,#000 0%,rgba(0,0,0,.85) 50%,transparent 100%)}.page:after{background:linear-gradient(90deg,rgba(3,10,22,.995) 0%,rgba(5,17,37,.96) 58%,rgba(5,17,37,.55) 100%)}.content{width:100%;padding:94px 18px 62px;justify-content:center}.brand{left:18px;top:18px}.brand img{width:42px;height:42px}.brand strong{font-size:1.42rem}.brand span{font-size:.72rem}.copy{margin-top:0;max-width:560px}.eyebrow{font-size:.62rem;padding:7px 10px}h1{font-size:clamp(2.75rem,13.2vw,4.2rem);margin:14px 0 10px}.lead{max-width:520px;font-size:.94rem;line-height:1.5}.functions{margin:13px 0 15px;font-size:.72rem;gap:7px 11px}.stores{max-width:520px;gap:8px}.store{min-height:64px;padding:10px 11px}.storeIcon{width:35px;height:35px;flex-basis:35px;font-size:20px}.store small{font-size:.52rem}.store b{font-size:.9rem}.links{left:18px;bottom:18px;font-size:.72rem;gap:7px 12px}}
+@media(max-width:430px){.page{min-height:660px}.content{padding-top:86px;padding-bottom:56px}.brand{top:14px}.screen-art{right:-48%;height:92%;opacity:.38}.stores{grid-template-columns:1fr 1fr}.store{gap:8px;padding:9px}.storeIcon{width:33px;height:33px;flex-basis:33px}.store small{font-size:.49rem}.store b{font-size:.84rem}.functions span:nth-child(3){display:none}.links{bottom:14px}}
+@media(max-height:680px) and (min-width:721px){.brand{top:18px}.content{padding-top:58px;padding-bottom:34px}.copy{margin-top:1vh}h1{font-size:clamp(2.8rem,5vw,4.4rem);margin:13px 0 10px}.lead{font-size:.98rem}.functions{margin:12px 0 14px}.store{min-height:64px}.links{bottom:18px}}
 </style>
 </head>
 <body>
 <div class="page">
-  <div class="top">
+  <img class="screen-art" src="./assets/ciudapp-login-real.webp" alt="" aria-hidden="true">
+  <div class="availability">Disponible para iPhone y Android</div>
+
+  <main class="content">
     <div class="brand">
       <img src="./assets/ciudapp-logo-oficial.webp" alt="Logo Ciudapp Gremial">
       <div><strong>Ciudapp</strong><span>GREMIAL</span></div>
     </div>
-    <div class="pill">Disponible para iPhone y Android</div>
-  </div>
 
-  <main class="hero">
     <section class="copy">
       <div class="eyebrow">La app de la Gremial del Banco Ciudad</div>
       <h1>Tu gremial,<span>siempre con vos</span></h1>
       <p class="lead">Información gremial, beneficios, noticias y alertas en una sola app. <strong>Descargá Ciudapp Gremial</strong> desde la tienda de tu teléfono.</p>
 
-      <div class="download">
-        <h2>Descargá Ciudapp</h2>
-        <p>Elegí la tienda correspondiente a tu dispositivo.</p>
-        <div class="stores">
-          <a class="store" href="https://apps.apple.com/ar/app/ciudapp-gremial/id6802139762" target="_blank" rel="noopener noreferrer">
-            <div class="storeIcon"></div>
-            <div><small>Disponible en</small><b>App Store</b></div>
-          </a>
-          <a class="store" href="https://play.google.com/store/apps/details?id=com.bancaria.ciudad" target="_blank" rel="noopener noreferrer">
-            <div class="storeIcon">▶</div>
-            <div><small>Disponible en</small><b>Google Play</b></div>
-          </a>
-        </div>
-        <div class="features">
-          <span class="feature">Noticias gremiales</span>
-          <span class="feature">Beneficios</span>
-          <span class="feature">Alertas</span>
-        </div>
+      <div class="functions" aria-label="Funciones principales">
+        <span>Información gremial</span>
+        <span>Beneficios</span>
+        <span>Alertas</span>
       </div>
 
-      <div class="links">
-        <a href="./privacidad.html">Privacidad</a>
-        <a href="./eliminar-cuenta.html">Eliminar cuenta</a>
-        <a href="./contacto.html">Contacto</a>
+      <div class="stores">
+        <a class="store" href="https://apps.apple.com/ar/app/ciudapp-gremial/id6802139762" target="_blank" rel="noopener noreferrer">
+          <div class="storeIcon"></div>
+          <div><small>Disponible en</small><b>App Store</b></div>
+        </a>
+        <a class="store" href="https://play.google.com/store/apps/details?id=com.bancaria.ciudad" target="_blank" rel="noopener noreferrer">
+          <div class="storeIcon">▶</div>
+          <div><small>Disponible en</small><b>Google Play</b></div>
+        </a>
       </div>
     </section>
 
-    <section class="visual" aria-label="Vista de Ciudapp Gremial">
-      <div class="phone">
-        <img src="./assets/ciudapp-login-real.webp" alt="Pantalla real de Ciudapp Gremial">
-      </div>
-    </section>
+    <nav class="links" aria-label="Información legal y contacto">
+      <a href="./privacidad.html">Privacidad</a><span class="sep">·</span>
+      <a href="./eliminar-cuenta.html">Eliminar cuenta</a><span class="sep">·</span>
+      <a href="./contacto.html">Contacto</a>
+    </nav>
   </main>
-
-  <footer>Ciudapp Gremial · La Gremial del Banco Ciudad</footer>
 </div>
 </body>
 </html>
